@@ -1,0 +1,85 @@
+@import 'https://fonts.googleapis.com/css?family=Cairo';
+
+body {
+    margin: 0px;
+    direction: ltr;
+	font-family: 'Cairo', sans-serif;
+}
+
+.navbar {
+    margin-bottom: 40px;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: dimgray;
+}
+
+.navbar li {
+    float: left;
+    margin-bottom: 0;
+}
+
+.navbar li a {
+    display: block;
+    color: #fff;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navbar li a:hover {
+    background-color: #ab5dda;
+}
+
+.navbar li a.active {
+    background-color: #c77bf7;
+}
+
+blockquote{
+    color:  #f44336a3;
+    border-left: 0.3rem solid #f44336a3;
+    border-right: none;
+}
+
+.button-sm{
+    font-size: .8rem;
+    height: 2.8rem;
+    line-height: 2.8rem;
+    padding: 0 1.5rem;
+}
+
+.title{
+    color: #202024;
+}
+
+.author{
+    color: #28a745;
+}
+
+.content{
+    color: #202024;
+}
+
+.register{
+    color: #ab5dda;
+}
+
+.login{
+    color: #ab5dda;
+}
+
+.create_post{
+    color: #ab5dda;
+}
+
+.edit_post{
+    color: #ab5dda;
+}
+
+button{
+    margin-left: 5px;
+}
