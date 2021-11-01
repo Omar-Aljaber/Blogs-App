@@ -2,6 +2,12 @@ const mongoose = require('mongoose');
 const createError = require('http-errors');
 const Post = require('../models/post');
 
+/**
+ * Create a comment
+ * @param req
+ * @param res
+ * @param next
+ */
 exports.create = (req, res, next) => {
     let data = {
         _id: mongoose.Types.ObjectId(),

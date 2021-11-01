@@ -2,6 +2,12 @@ const jwt = require('jsonwebtoken');
 const createError = require('http-errors');
 const User = require('../models/user');
 
+/**
+ * Login
+ * @param req
+ * @param res
+ * @param next
+ */
 exports.login = (req, res, next) => {
     const data = {
         email: req.body.email,

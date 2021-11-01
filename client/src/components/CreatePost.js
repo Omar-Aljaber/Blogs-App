@@ -14,18 +14,23 @@ class CreatePost extends React.Component {
         };
     }
 
+    // Get the Title
     changeTitle(e) {
         this.setState({
             title: e.target.value,
             error: '',
         });
     }
+
+    // Get the Content
     changeContent(e) {
         this.setState({
             content: e.target.value,
             error: '',
         });
     }
+
+    // Create a Blog
     onSubmit(e) {
         e.preventDefault();
         if (!this.state.title) {

@@ -19,6 +19,7 @@ class ViewPost extends React.Component {
         };
     }
 
+    // Delete and Edit buttons
     actionsRender() {
         if (localStorage.getItem('_id') === this.state.post.author._id) {
             return (
@@ -37,6 +38,7 @@ class ViewPost extends React.Component {
         }
     }
 
+    // Delete handler
     deleteHandler() {
         const postId = this.props.match.params.id;
         axios
@@ -51,6 +53,7 @@ class ViewPost extends React.Component {
             });
     }
 
+    // Get Comment
     changeComment(e) {
         this.setState({
             comment: e.target.value,
@@ -58,6 +61,7 @@ class ViewPost extends React.Component {
         });
     }
 
+    // Send a Comment
     onSubmit(e) {
         e.preventDefault();
         if (!this.state.comment) {
@@ -127,6 +131,8 @@ class ViewPost extends React.Component {
             );
         });
     }
+
+    // Get details of the Blog
     componentDidMount() {
         const postId = this.props.match.params.id;
         axios

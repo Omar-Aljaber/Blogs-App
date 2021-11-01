@@ -1,6 +1,12 @@
 const createError = require('http-errors');
 const User = require('../models/user');
 
+/**
+ * Create a user
+ * @param req
+ * @param res
+ * @param next
+ */
 exports.create = (req, res, next) => {
     const data = {
         name: req.body.name,
@@ -14,6 +20,12 @@ exports.create = (req, res, next) => {
         .catch(next);
 };
 
+/**
+ * Find all users
+ * @param req
+ * @param res
+ * @param next
+ */
 exports.list = (req, res, next) => {
     User.find()
         .then((users) => {
@@ -22,6 +34,12 @@ exports.list = (req, res, next) => {
         .catch(next);
 };
 
+/**
+ * Find a user
+ * @param req
+ * @param res
+ * @param next
+ */
 exports.fideOne = (req, res, next) => {
     const id = req.params.id;
     User.findById(id)
@@ -32,6 +50,12 @@ exports.fideOne = (req, res, next) => {
         .catch(next);
 };
 
+/**
+ * Update a user
+ * @param req
+ * @param res
+ * @param next
+ */
 exports.update = (req, res, next) => {
     const id = req.params.id;
     const data = {
@@ -48,6 +72,12 @@ exports.update = (req, res, next) => {
         .catch(next);
 };
 
+/**
+ * Delete a user
+ * @param req
+ * @param res
+ * @param next
+ */
 exports.delete = (req, res, next) => {
     const id = req.params.id;
     User.findByIdAndRemove(id)

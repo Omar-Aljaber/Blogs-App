@@ -1,6 +1,12 @@
 const createError = require('http-errors');
 const Post = require('../models/post');
 
+/**
+ * Create a Blog
+ * @param req
+ * @param res
+ * @param next
+ */
 exports.create = (req, res, next) => {
     const data = {
         title: req.body.title,
@@ -14,6 +20,12 @@ exports.create = (req, res, next) => {
         .catch(next);
 };
 
+/**
+ * Find all Blogs
+ * @param req
+ * @param res
+ * @param next
+ */
 exports.list = (req, res, next) => {
     Post.find()
         .select('-comments')
@@ -24,6 +36,12 @@ exports.list = (req, res, next) => {
         .catch(next);
 };
 
+/**
+ * Show details from a Blog
+ * @param req
+ * @param res
+ * @param next
+ */
 exports.details = (req, res, next) => {
     const id = req.params.id;
     Post.findById(id)
@@ -36,6 +54,12 @@ exports.details = (req, res, next) => {
         .catch(next);
 };
 
+/**
+ * Update a Blog
+ * @param req
+ * @param res
+ * @param next
+ */
 exports.update = (req, res, next) => {
     const data = {
         title: req.body.title,
@@ -51,6 +75,12 @@ exports.update = (req, res, next) => {
         .catch(next);
 };
 
+/**
+ * Delete a Blog
+ * @param req
+ * @param res
+ * @param next
+ */
 exports.delete = (req, res, next) => {
     Post.findOneAndRemove({ _id: req.params.id, author: req.user.id })
         .then((deleted) => {

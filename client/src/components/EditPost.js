@@ -14,6 +14,7 @@ class EditPost extends React.Component {
         };
     }
 
+    // Get the Title
     changeTitle(e) {
         this.setState({
             title: e.target.value,
@@ -21,6 +22,7 @@ class EditPost extends React.Component {
         });
     }
 
+    // Get the Content
     changeContent(e) {
         this.setState({
             content: e.target.value,
@@ -28,6 +30,7 @@ class EditPost extends React.Component {
         });
     }
 
+    // Update the Blog
     onSubmit(e) {
         e.preventDefault();
         if (!this.state.title) {
@@ -67,6 +70,7 @@ class EditPost extends React.Component {
             });
     }
 
+    // Get the Details 
     componentDidMount() {
         const postId = this.props.match.params.id;
         axios

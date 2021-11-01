@@ -3,6 +3,9 @@ const router = express.Router();
 const controller = require('../controllers/postsController');
 const middleware = require('../middlewares/authMiddleware');
 
+/**
+ * Blogs routes
+ */
 router.post('/', middleware.auhtenticated, controller.create);
 router.get('/', controller.list);
 router.get('/:id', controller.details);

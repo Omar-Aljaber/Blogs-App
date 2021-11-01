@@ -16,18 +16,23 @@ class Login extends React.Component {
         };
     }
 
+    // Get the Email
     changeEmail(e) {
         this.setState({
             email: e.target.value,
             error: '',
         });
     }
+
+    // Get the Password
     changePassword(e) {
         this.setState({
             password: e.target.value,
             error: '',
         });
     }
+    
+    // Login
     onSubmit(e) {
         e.preventDefault();
         if (!this.state.email) {

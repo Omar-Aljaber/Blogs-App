@@ -10,7 +10,8 @@ class Home extends React.Component {
             error: '',
         };
     }
-
+    
+    // Get the Titles of all Blogs
     componentDidMount() {
         axios.get('/api/posts').then((res) => {
             this.setState({
